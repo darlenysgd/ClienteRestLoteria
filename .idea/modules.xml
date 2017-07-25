@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ClienteRestLoteria.iml" filepath="$PROJECT_DIR$/.idea/modules/ClienteRestLoteria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ClienteRestLoteria_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ClienteRestLoteria_main.iml" group="ClienteRestLoteria" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ClienteRestLoteria_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ClienteRestLoteria_test.iml" group="ClienteRestLoteria" />
+    </modules>
+  </component>
+</project>
