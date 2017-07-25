@@ -13,13 +13,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static spark.Spark.get;
-import static spark.Spark.port;
-import static spark.Spark.staticFiles;
+import static spark.Spark.*;
 
 public class main {
 
-    List<juegos> lista = new ArrayList<>();
+   private static ArrayList<juegos> lista = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -30,12 +28,27 @@ public class main {
         configuration.setClassForTemplateLoading(main.class, "/");
         FreeMarkerEngine freeMarkerEngine = new FreeMarkerEngine(configuration);
 
-        ArrayList<juegos> games = consultar("monti");
+
+        get("/Inicio", (request, response) -> {
+
+            Map<String, Object> attributes = new HashMap<>();
+            return new ModelAndView(attributes, "inicio.ftl");
+
+        }, freeMarkerEngine);
+
+        post ("/Inicio", (request, response) -> {
+            Map<String, Object> attributes = new HashMap<>();
+            String username = request.queryParams("username");
+            lista = consultar(username);
+            response.redirect("/ClienteRest");
+            return null;
+        });
+
 
         get("/ClienteRest", (request, response) -> {
 
             Map<String, Object> attributes = new HashMap<>();
-            attributes.put("juegos", games);
+            attributes.put("juegos", lista);
             return new ModelAndView(attributes, "Home.ftl");
 
         }, freeMarkerEngine);
