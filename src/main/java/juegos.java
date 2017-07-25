@@ -4,14 +4,14 @@
 public class juegos {
 
     private String fecha;
-    private boolean pale;
-    private Boolean ganador;
+    private String jugada;
+    private String ganador;
     private Long montoGanado;
     private Long montoApostado;
 
-    public juegos(String fecha, boolean pale, Boolean ganador, Long montoGanado, Long montoApostado) {
+    public juegos(String fecha, String jugada, String ganador, Long montoGanado, Long montoApostado) {
         this.fecha = fecha;
-        this.pale = pale;
+        this.jugada = jugada;
         this.ganador = ganador;
         this.montoGanado = montoGanado;
         this.montoApostado = montoApostado;
@@ -25,19 +25,19 @@ public class juegos {
         this.fecha = fecha;
     }
 
-    public boolean isPale() {
-        return pale;
+    public String getJugada() {
+        return jugada;
     }
 
-    public void setPale(boolean pale) {
-        this.pale = pale;
+    public void setJugada(String jugada) {
+        this.jugada = jugada;
     }
 
-    public Boolean getGanador() {
+    public String getGanador() {
         return ganador;
     }
 
-    public void setGanador(Boolean ganador) {
+    public void setGanador(String ganador) {
         this.ganador = ganador;
     }
 
